@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Digit : IEnumerable<string>
 {
@@ -31,7 +32,13 @@ public class Digit : IEnumerable<string>
             index++;
         }
         result.Average /= index;
+        result.HighNum  = from item in _digits
+                             where item.Length > 0 && item.Length == result.High
+                             select item;
         
+        result.LowNum = from item in _digits
+                        where item.Length > 0 && item.Length == result.Low
+                        select item;
         return result;
     }
 

@@ -24,7 +24,6 @@ namespace ConsoleDigit
                 {
                     digits.AddDigit(input);
                     Console.WriteLine($"Добавлено число {input}");
-                    //var sortDigits =digits.S
                     var temp = string.Join(",", digits);
                     Console.WriteLine($"Список на данный момент:{temp}");
                 }
@@ -33,9 +32,11 @@ namespace ConsoleDigit
                     Console.WriteLine($"Введите корректное положительное число!");
                 }
                 var stat = digits.GetStatistic();
-                Console.WriteLine($"Самое длинное число содержит знаков: {stat.High} ");
-                Console.WriteLine($"Самое короткое число содержит знаков: {stat.Low} ");
-                Console.WriteLine($"В среднем длина числа содержит знаков: {stat.Average}");
+                var statH = string.Join(",", stat.HighNum);
+                var statL = string.Join(",", stat.LowNum);
+                Console.WriteLine($"Самые длинные числа содержат знаков: {stat.High}. Список:{statH} ");
+                Console.WriteLine($"Самые короткие числа содержат знаков: {stat.Low}. Список:{statL}");
+                Console.WriteLine($"Среддняя длина чисел в списке: {stat.Average}");
             }
         }
     }

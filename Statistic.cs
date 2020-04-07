@@ -9,7 +9,7 @@ namespace ConsoleDigit
         public int High;
         public int Low;
         public int Average;
-        public int LowNum;
-        public int HighNum;
+        public IEnumerable<string> LowNum;
+        public IEnumerable<string> HighNum;
     }
 }
